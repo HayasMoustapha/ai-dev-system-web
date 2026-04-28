@@ -38,6 +38,37 @@ npm run lint
 npm run build
 ```
 
+## Environment
+
+Le copilote de session fonctionne en mode fallback sans credentials, mais pour activer un vrai stream modele il faut configurer un provider.
+
+Configuration recommandee pour vos tests avec une cle OpenAI directe :
+
+```env
+OPENAI_API_KEY=...
+OPENAI_MODEL=gpt-5-nano
+```
+
+`gpt-5-nano` est le choix le plus leger et le moins couteux pour les tests rapides. Si vous preferez passer plus tard par Vercel AI Gateway, vous pouvez utiliser a la place :
+
+```env
+AI_GATEWAY_API_KEY=...
+AI_GATEWAY_MODEL=openai/gpt-5-nano
+```
+
+Etapes locales :
+
+```bash
+copy .env.example .env.local
+npm run dev
+```
+
+Important :
+
+- `AI_GATEWAY_API_KEY` attend une cle Vercel AI Gateway, pas une cle OpenAI directe.
+- ce repo ne versionne pas `.env.local`.
+- la session Governor locale reste sous `.ai-dev-system/` et pilote le chantier web localement.
+
 ## Source Of Truth
 
 Lire en priorite :

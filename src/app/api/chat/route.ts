@@ -6,6 +6,7 @@ import {
   streamText,
   type UIMessage,
 } from "ai";
+import { openai } from "@ai-sdk/openai";
 import { getGovernorSessionDetail } from "@/lib/governor/session-read-model";
 
 export const dynamic = "force-dynamic";
@@ -30,8 +31,8 @@ function buildSessionContextBlock(sessionName: string | undefined, sessionContex
 function fallbackResponse(sessionName?: string) {
   const textId = "copilot-fallback";
   const message = sessionName
-    ? `Le copilote AI SDK est cable pour la session ${sessionName}, mais aucun provider n'est configure. Definis AI_GATEWAY_API_KEY et AI_GATEWAY_MODEL pour activer le streaming modele.`
-    : "Le copilote AI SDK est cable, mais aucun provider n'est configure. Definis AI_GATEWAY_API_KEY et AI_GATEWAY_MODEL pour activer le streaming modele.";
+    ? `Le copilote AI SDK est cable pour la session ${sessionName}, mais aucun provider n'est configure. Definis OPENAI_API_KEY et OPENAI_MODEL pour un provider OpenAI direct, ou AI_GATEWAY_API_KEY et AI_GATEWAY_MODEL pour Vercel AI Gateway.`
+    : "Le copilote AI SDK est cable, mais aucun provider n'est configure. Definis OPENAI_API_KEY et OPENAI_MODEL pour un provider OpenAI direct, ou AI_GATEWAY_API_KEY et AI_GATEWAY_MODEL pour Vercel AI Gateway.";
 
   const stream = createUIMessageStream({
     execute: ({ writer }) => {
@@ -44,6 +45,24 @@ function fallbackResponse(sessionName?: string) {
   });
 
   return createUIMessageStreamResponse({ stream });
+}
+
+function resolveConfiguredModel() {
+  const openaiKey = process.env.OPENAI_API_KEY;
+  const openaiModel = process.env.OPENAI_MODEL;
+
+  if (openaiKey && openaiModel) {
+    return openai(openaiModel);
+  }
+
+  const gatewayKey = process.env.AI_GATEWAY_API_KEY;
+  const gatewayModel = process.env.AI_GATEWAY_MODEL;
+
+  if (gatewayKey && gatewayModel) {
+    return gateway(gatewayModel);
+  }
+
+  return null;
 }
 
 export async function POST(request: Request) {
@@ -60,15 +79,14 @@ export async function POST(request: Request) {
       ].join("\n")
     : "Aucune session detaillee n'a ete fournie.";
 
-  const gatewayKey = process.env.AI_GATEWAY_API_KEY;
-  const gatewayModel = process.env.AI_GATEWAY_MODEL;
+  const model = resolveConfiguredModel();
 
-  if (!gatewayKey || !gatewayModel) {
+  if (!model) {
     return fallbackResponse(sessionName);
   }
 
   const result = streamText({
-    model: gateway(gatewayModel),
+    model,
     system: buildSessionContextBlock(sessionName, sessionContext),
     messages: await convertToModelMessages(messages),
   });
