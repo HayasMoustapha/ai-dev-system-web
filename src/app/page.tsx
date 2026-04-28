@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 export default function Home() {
   return (
     <div className="min-h-screen bg-[radial-gradient(circle_at_top,#f4f1e8,transparent_42%),linear-gradient(180deg,#fbf8f1_0%,#f0ebe1_100%)] text-stone-900">
@@ -38,6 +40,18 @@ export default function Home() {
                 </p>
               </div>
             </div>
+
+            <div className="flex flex-col gap-4 sm:flex-row">
+              <Link
+                href="/sessions"
+                className="inline-flex items-center justify-center rounded-full bg-stone-950 px-6 py-3 text-sm font-medium uppercase tracking-[0.22em] text-stone-50 transition-transform duration-200 hover:-translate-y-0.5"
+              >
+                Ouvrir les sessions
+              </Link>
+              <div className="inline-flex items-center justify-center rounded-full border border-stone-300/70 bg-white/70 px-6 py-3 text-sm uppercase tracking-[0.2em] text-stone-600">
+                Read-only P0
+              </div>
+            </div>
           </div>
 
           <aside className="rounded-[2rem] border border-stone-300/70 bg-white/85 p-6 shadow-[0_30px_80px_-35px_rgba(42,33,20,0.35)] backdrop-blur">
@@ -48,7 +62,7 @@ export default function Home() {
               <li>Bootstrap du repo web separe</li>
               <li>Definition des frontieres avec le coeur Governor</li>
               <li>Preparation de la couche AI SDK UI</li>
-              <li>Future lecture de `session-dashboard.md` et `session-event-log.yml`</li>
+              <li>Lecture web initiale de `session-dashboard.md` et `session-event-log.yml`</li>
             </ul>
             <div className="mt-8 rounded-2xl bg-stone-100 p-4 text-sm leading-7 text-stone-700">
               Prochaine tranche recommandee : ajouter les dependances AI SDK,

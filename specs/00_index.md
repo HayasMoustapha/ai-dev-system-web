@@ -12,6 +12,8 @@ Ce repo porte l'interface web dediee d'AI Dev System / Governor.
 ## Active Spec Documents
 
 - `specs/implementation_plan.md`
+- `specs/governor-session-read-model-p0.md`
+- `specs/governor-session-adapter-ai-sdk-p1.md`
 - `research/source_inventory.md`
 - `research/open_questions.md`
 - `research/architecture_candidates.md`
