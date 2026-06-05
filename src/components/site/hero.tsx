@@ -61,7 +61,7 @@ export function Hero() {
         >
           <Link
             href="/docs"
-            className="group inline-flex items-center gap-2 rounded-full bg-foreground px-6 py-3 text-sm font-medium text-background transition-transform hover:-translate-y-0.5"
+            className="group inline-flex items-center gap-2 rounded-full bg-foreground px-6 py-3 text-sm font-medium text-[#05060a] transition-transform hover:-translate-y-0.5"
           >
             Commencer
             <span className="transition-transform group-hover:translate-x-0.5">→</span>

@@ -72,9 +72,9 @@ export function SiteHeader() {
           </a>
           <Link
             href="/docs"
-            className="inline-flex items-center rounded-full bg-foreground px-4 py-1.5 text-sm font-medium text-background transition-transform hover:-translate-y-0.5"
+            className="inline-flex items-center rounded-full bg-foreground px-4 py-1.5 text-sm font-medium text-[#05060a] transition-transform hover:-translate-y-0.5"
           >
-            Get started
+            Commencer
           </Link>
           <button
             type="button"

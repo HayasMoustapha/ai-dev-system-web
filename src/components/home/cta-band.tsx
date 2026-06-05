@@ -21,7 +21,7 @@ export function CtaBand() {
           <div className="mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row">
             <Link
               href="/docs/getting-started"
-              className="group inline-flex items-center gap-2 rounded-full bg-foreground px-6 py-3 text-sm font-medium text-background transition-transform hover:-translate-y-0.5"
+              className="group inline-flex items-center gap-2 rounded-full bg-foreground px-6 py-3 text-sm font-medium text-[#05060a] transition-transform hover:-translate-y-0.5"
             >
               Démarrer en 15 minutes
               <span className="transition-transform group-hover:translate-x-0.5">→</span>

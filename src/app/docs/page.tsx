@@ -35,7 +35,7 @@ export default function DocsIndexPage() {
         <div className="mt-6 flex flex-wrap gap-3">
           <Link
             href="/docs/getting-started"
-            className="group inline-flex items-center gap-2 rounded-full bg-foreground px-5 py-2.5 text-sm font-medium text-background transition-transform hover:-translate-y-0.5"
+            className="group inline-flex items-center gap-2 rounded-full bg-foreground px-5 py-2.5 text-sm font-medium text-[#05060a] transition-transform hover:-translate-y-0.5"
           >
             Démarrer maintenant
             <span className="transition-transform group-hover:translate-x-0.5">→</span>

@@ -18,7 +18,7 @@ export function AudienceTabs({ items }: { items: TabItem[] }) {
               type="button"
               onClick={() => setActive(it.id)}
               className={`rounded-full px-4 py-2 text-sm font-medium transition-colors ${
-                on ? "bg-foreground text-background" : "text-muted hover:text-foreground"
+                on ? "bg-foreground text-[#05060a]" : "text-muted hover:text-foreground"
               }`}
             >
               {it.label}
