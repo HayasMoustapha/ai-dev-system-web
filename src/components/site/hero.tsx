@@ -45,7 +45,7 @@ export function Hero() {
           initial={{ opacity: 0, y: 18 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, ease, delay: 0.12 }}
-          className="mt-6 max-w-2xl text-pretty text-lg leading-8 text-muted sm:text-xl"
+          className="mt-6 max-w-2xl text-pretty text-lg leading-8 text-foreground/80 sm:text-xl"
         >
           AI Dev System pilote n&apos;importe quel exécuteur IA sous une gouvernance
           ultra‑automatisée, intelligente et prédictive — reprise exacte, attestation
