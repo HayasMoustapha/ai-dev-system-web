@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import { SiteShell } from "../../components/site/site-shell";
 import { PageHeader } from "../../components/site/page-header";
 import { Reveal } from "../../components/site/reveal";
@@ -40,7 +41,10 @@ export default function CapabilitiesPage() {
             <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
               {group.items.map((cap, i) => (
                 <Reveal key={cap.id} delay={i * 0.05}>
-                  <article className="glass group relative h-full overflow-hidden rounded-2xl p-6 transition-colors hover:bg-white/[0.06]">
+                  <Link
+                    href={`/capabilities/${cap.id}`}
+                    className="glass group relative flex h-full flex-col overflow-hidden rounded-2xl p-6 transition-colors hover:bg-white/[0.06]"
+                  >
                     <div
                       className={`pointer-events-none absolute inset-x-0 top-0 h-px bg-gradient-to-r ${ACCENT_BAR[cap.accent]} to-transparent opacity-70`}
                     />
@@ -51,7 +55,11 @@ export default function CapabilitiesPage() {
                     <h3 className="mt-4 text-base font-semibold text-foreground">{cap.title}</h3>
                     <p className="mt-1 text-sm font-medium text-foreground/80">{cap.tagline}</p>
                     <p className="mt-3 text-sm leading-6 text-muted">{cap.description}</p>
-                  </article>
+                    <span className="mt-4 inline-flex items-center gap-1 text-xs text-cyan/80 opacity-0 transition-opacity group-hover:opacity-100">
+                      Lire en détail
+                      <span className="transition-transform group-hover:translate-x-0.5">→</span>
+                    </span>
+                  </Link>
                 </Reveal>
               ))}
             </div>
