@@ -22,8 +22,11 @@ export async function generateMetadata({
   const cap = getCapability(id);
   if (!cap) return { title: "Capacité · AI Dev System" };
   return {
-    title: `${cap.title} · Capacité · AI Dev System`,
+    title: cap.title,
     description: cap.description,
+    alternates: { canonical: `/capabilities/${cap.id}` },
+    openGraph: { title: cap.title, description: cap.description, url: `/capabilities/${cap.id}` },
+    twitter: { title: cap.title, description: cap.description },
   };
 }
 

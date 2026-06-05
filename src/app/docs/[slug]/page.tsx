@@ -19,8 +19,11 @@ export async function generateMetadata({
   const page = getDocPage(slug);
   if (!page) return { title: "Docs · AI Dev System" };
   return {
-    title: `${page.title} · Docs · AI Dev System`,
+    title: page.title,
     description: page.summary,
+    alternates: { canonical: `/docs/${page.slug}` },
+    openGraph: { title: page.title, description: page.summary, url: `/docs/${page.slug}` },
+    twitter: { title: page.title, description: page.summary },
   };
 }
 
