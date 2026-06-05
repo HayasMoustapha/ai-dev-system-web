@@ -42,3 +42,4 @@ yarn-error.log*
 next-env.d.ts
 # AI Dev System project-local copy
 .ai-dev-system/
+.screenshots/

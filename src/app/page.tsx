@@ -1,77 +1,88 @@
 import Link from "next/link";
+import { SiteHeader } from "../components/site/site-header";
+import { SiteFooter } from "../components/site/site-footer";
+import { Hero } from "../components/site/hero";
+
+const FEATURES = [
+  {
+    title: "Reprise exacte",
+    desc: "Journal de continuité crash-safe : reprends exactement où ça s'est arrêté, même après des jours.",
+    accent: "cyan",
+  },
+  {
+    title: "Attestation cryptographique",
+    desc: "Chaîne de hachage signée du fil de livraison — vérifiable hors-ligne, infalsifiable.",
+    accent: "violet",
+  },
+  {
+    title: "Gouvernance prédictive",
+    desc: "Le risque d'une tranche est prédit avant exécution et calibre profil, revue et strictesse.",
+    accent: "blue",
+  },
+  {
+    title: "Allégeance imposée",
+    desc: "L'exécuteur agit toujours sous Governor — contrat, gate hôte, vérification, attestation.",
+    accent: "cyan",
+  },
+  {
+    title: "Strictesse ciblée",
+    desc: "Zone rouge hard-enforced : rien de catastrophique ne passe, sans étouffer le travail propre.",
+    accent: "violet",
+  },
+  {
+    title: "Mode économe",
+    desc: "Le minimum de crédits par défaut, escalade uniquement sur échec de gate. Qualité garantie.",
+    accent: "blue",
+  },
+];
+
+const ACCENT: Record<string, string> = {
+  cyan: "before:bg-cyan",
+  violet: "before:bg-violet",
+  blue: "before:bg-blue",
+};
 
 export default function Home() {
   return (
-    <div className="min-h-screen bg-[radial-gradient(circle_at_top,#f4f1e8,transparent_42%),linear-gradient(180deg,#fbf8f1_0%,#f0ebe1_100%)] text-stone-900">
-      <main className="mx-auto flex min-h-screen w-full max-w-6xl flex-col px-6 py-12 sm:px-10 lg:px-12">
-        <section className="grid flex-1 gap-10 lg:grid-cols-[1.15fr_0.85fr] lg:items-end">
-          <div className="space-y-8">
-            <div className="inline-flex rounded-full border border-stone-300/70 bg-white/70 px-4 py-2 text-xs font-medium uppercase tracking-[0.28em] text-stone-600 backdrop-blur">
-              AI Dev System Web
-            </div>
+    <>
+      <SiteHeader />
+      <main>
+        <Hero />
 
-            <div className="space-y-5">
-              <h1 className="max-w-4xl text-5xl font-semibold tracking-[-0.04em] text-balance sm:text-6xl lg:text-7xl">
-                Control surface web dediee pour Governor.
-              </h1>
-              <p className="max-w-2xl text-lg leading-8 text-stone-700 sm:text-xl">
-                Ce repo porte l&apos;interface navigateur, le streaming UI et la
-                future integration AI SDK. Le noyau Python Governor reste dans
-                le repo source et n&apos;est pas duplique ici.
-              </p>
-            </div>
-
-            <div className="grid gap-4 sm:grid-cols-2">
-              <div className="rounded-3xl border border-stone-300/70 bg-white/80 p-5 shadow-[0_20px_60px_-30px_rgba(66,54,37,0.35)] backdrop-blur">
-                <div className="text-sm font-medium uppercase tracking-[0.22em] text-stone-500">
-                  Repo web
-                </div>
-                <p className="mt-3 text-sm leading-7 text-stone-700">
-                  Next.js App Router, TypeScript, Tailwind et AI SDK cote UI.
-                </p>
-              </div>
-              <div className="rounded-3xl border border-stone-300/70 bg-stone-950 p-5 text-stone-50 shadow-[0_20px_60px_-30px_rgba(25,22,18,0.6)]">
-                <div className="text-sm font-medium uppercase tracking-[0.22em] text-stone-300">
-                  Repo source
-                </div>
-                <p className="mt-3 text-sm leading-7 text-stone-200">
-                  `ai-dev-system-universel` reste la source de verite du coeur
-                  Governor, des contrats de session et des scripts Python.
-                </p>
-              </div>
-            </div>
-
-            <div className="flex flex-col gap-4 sm:flex-row">
-              <Link
-                href="/sessions"
-                className="inline-flex items-center justify-center rounded-full bg-stone-950 px-6 py-3 text-sm font-medium uppercase tracking-[0.22em] text-stone-50 transition-transform duration-200 hover:-translate-y-0.5"
-              >
-                Ouvrir les sessions
-              </Link>
-              <div className="inline-flex items-center justify-center rounded-full border border-stone-300/70 bg-white/70 px-6 py-3 text-sm uppercase tracking-[0.2em] text-stone-600">
-                Read-only P0
-              </div>
-            </div>
+        <section className="mx-auto max-w-7xl px-6 lg:px-10">
+          <div className="mx-auto max-w-2xl text-center">
+            <h2 className="text-3xl font-semibold tracking-tight sm:text-4xl">
+              Une gouvernance qui se prouve
+            </h2>
+            <p className="mt-4 text-pretty text-muted">
+              Chaque capacité est déterministe, testée et gatée. Pas de promesse — des
+              garanties par construction.
+            </p>
           </div>
 
-          <aside className="rounded-[2rem] border border-stone-300/70 bg-white/85 p-6 shadow-[0_30px_80px_-35px_rgba(42,33,20,0.35)] backdrop-blur">
-            <div className="text-sm font-medium uppercase tracking-[0.24em] text-stone-500">
-              P0 en cours
-            </div>
-            <ul className="mt-6 space-y-4 text-sm leading-7 text-stone-700">
-              <li>Bootstrap du repo web separe</li>
-              <li>Definition des frontieres avec le coeur Governor</li>
-              <li>Preparation de la couche AI SDK UI</li>
-              <li>Lecture web initiale de `session-dashboard.md` et `session-event-log.yml`</li>
-            </ul>
-            <div className="mt-8 rounded-2xl bg-stone-100 p-4 text-sm leading-7 text-stone-700">
-              Prochaine tranche recommandee : ajouter les dependances AI SDK,
-              puis construire une premiere vue web de session Governor sans
-              toucher au noyau Python.
-            </div>
-          </aside>
+          <div className="mt-12 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+            {FEATURES.map((f) => (
+              <div
+                key={f.title}
+                className={`glass group relative overflow-hidden rounded-2xl p-6 transition-colors hover:bg-white/[0.06] before:absolute before:left-0 before:top-0 before:h-full before:w-px ${ACCENT[f.accent]} before:opacity-60`}
+              >
+                <h3 className="text-base font-semibold text-foreground">{f.title}</h3>
+                <p className="mt-2.5 text-sm leading-6 text-muted">{f.desc}</p>
+              </div>
+            ))}
+          </div>
+
+          <div className="mt-12 flex justify-center">
+            <Link
+              href="/capabilities"
+              className="glass inline-flex items-center gap-2 rounded-full px-5 py-2.5 text-sm text-foreground transition-colors hover:bg-white/[0.07]"
+            >
+              Voir les 16 capacités →
+            </Link>
+          </div>
         </section>
       </main>
-    </div>
+      <SiteFooter />
+    </>
   );
 }

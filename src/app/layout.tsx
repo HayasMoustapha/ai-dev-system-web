@@ -13,9 +13,9 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "AI Dev System Web",
+  title: "AI Dev System — Le systeme de livraison gouverne",
   description:
-    "Interface web dediee pour AI Dev System / Governor avec lecture locale des sessions.",
+    "Gouverne, prouve et automatise n'importe quel executeur IA. Reprise exacte, attestation cryptographique, gouvernance predictive et strictesse imposee — par construction.",
 };
 
 export default function RootLayout({
