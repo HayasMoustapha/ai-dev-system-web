@@ -10,7 +10,7 @@ export const metadata: Metadata = {
 
 const LINKS = [
   { href: "/docs", label: "Documentation", desc: "33 pages, du démarrage aux contrats internes." },
-  { href: "/capabilities", label: "Capacités", desc: "Les 16 capacités gouvernées, en détail." },
+  { href: "/capabilities", label: "Capacités", desc: "Les capacités gouvernées, en détail." },
   { href: "/guides", label: "Guides", desc: "Parcours pas à pas + simulation en direct." },
 ];
 

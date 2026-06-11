@@ -7,6 +7,7 @@ import { FeatureRows } from "../components/home/feature-rows";
 import { Audience } from "../components/home/audience";
 import { CtaBand } from "../components/home/cta-band";
 import { Reveal } from "../components/site/reveal";
+import { CAPABILITY_COUNT, CAPABILITY_GROUPS } from "../lib/capabilities";
 
 const FEATURES = [
   {
@@ -62,7 +63,7 @@ export default function Home() {
           <Reveal>
             <div className="mx-auto max-w-2xl text-center">
               <p className="font-mono text-xs uppercase tracking-[0.2em] text-cyan/80">
-                16 capacités, 5 familles
+                {CAPABILITY_COUNT} capacités, {CAPABILITY_GROUPS.length} familles
               </p>
               <h2 className="mt-3 text-3xl font-semibold tracking-tight sm:text-4xl">
                 Une gouvernance qui se prouve
@@ -92,7 +93,7 @@ export default function Home() {
               href="/capabilities"
               className="glass inline-flex items-center gap-2 rounded-full px-5 py-2.5 text-sm text-foreground transition-colors hover:bg-white/[0.07]"
             >
-              Voir les 16 capacités →
+              Voir les {CAPABILITY_COUNT} capacités →
             </Link>
           </div>
         </section>

@@ -5,9 +5,9 @@ import { motion } from "motion/react";
 import { HeroBackground } from "./hero-background";
 
 const STATS = [
-  { value: "16", label: "releases livrées" },
-  { value: "9", label: "instances gouvernées" },
-  { value: "82", label: "portes CI vertes" },
+  { value: "63", label: "releases livrées" },
+  { value: "11", label: "instances gouvernées" },
+  { value: "125", label: "portes CI vertes" },
   { value: "0", label: "régression tolérée" },
 ];
 
@@ -27,7 +27,7 @@ export function Hero() {
           className="glass inline-flex items-center gap-2 rounded-full px-4 py-1.5 text-xs text-muted"
         >
           <span className="h-1.5 w-1.5 rounded-full bg-cyan shadow-[0_0_10px_2px_rgba(34,211,238,0.8)]" />
-          Le système de livraison gouverné · v1.16
+          Le système de livraison gouverné · v1.61.0
         </motion.div>
 
         <motion.h1
