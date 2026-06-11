@@ -25,19 +25,19 @@ export const DOC_SECTIONS: DocSection[] = [
   {
     id: "demarrer",
     title: "Démarrer",
-    blurb: "De zéro à une première livraison gouvernée — pour informaticiens et non-informaticiens.",
+    blurb: "De zéro à une première livraison gouvernée. Pas informaticien ? Commence par « Parcours non-informaticien » ci-dessous.",
     pages: [
+      {
+        slug: "parcours-non-informaticien",
+        title: "Parcours non-informaticien",
+        summary: "Le point de départ si tu n'es pas technique : comprendre et utiliser Governor en langage clair.",
+        source: "getting-started/parcours-non-informaticien.md",
+      },
       {
         slug: "getting-started",
         title: "Démarrage ultra-simple",
         summary: "Le chemin le plus court : installer, ouvrir une session, livrer une première tranche.",
         source: "getting-started/guide-demarrage-ultra-simple.md",
-      },
-      {
-        slug: "parcours-non-informaticien",
-        title: "Parcours non-informaticien",
-        summary: "Comprendre et utiliser Governor sans bagage technique, en langage clair.",
-        source: "getting-started/parcours-non-informaticien.md",
       },
       {
         slug: "governor-15-minutes",
@@ -73,8 +73,8 @@ export const DOC_SECTIONS: DocSection[] = [
   },
   {
     id: "concepts",
-    title: "Concepts fondamentaux",
-    blurb: "Le modèle mental : couches, sources de vérité, boucle d'exécution, pilotage de l'exécuteur.",
+    title: "Approfondissement — Concepts",
+    blurb: "Pour aller plus loin (profils techniques) : couches, sources de vérité, boucle d'exécution, pilotage de l'exécuteur.",
     pages: [
       {
         slug: "architecture",

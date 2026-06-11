@@ -32,19 +32,36 @@ export default function DocsIndexPage() {
           démarrage aux contrats internes — pour les profils techniques comme non-techniques.
         </p>
 
-        <div className="mt-6 flex flex-wrap gap-3">
+        <div className="mt-7 grid gap-3 sm:grid-cols-2">
           <Link
-            href="/docs/getting-started"
-            className="group inline-flex items-center gap-2 rounded-full bg-foreground px-5 py-2.5 text-sm font-medium text-[#05060a] transition-transform hover:-translate-y-0.5"
+            href="/docs/parcours-non-informaticien"
+            className="glass group rounded-2xl p-5 transition-colors hover:bg-white/[0.06]"
           >
-            Démarrer maintenant
-            <span className="transition-transform group-hover:translate-x-0.5">→</span>
+            <p className="font-mono text-[0.7rem] uppercase tracking-[0.18em] text-cyan/80">
+              Vous débutez · non-technique
+            </p>
+            <h2 className="mt-2 text-base font-semibold text-foreground">
+              Commencez ici, en langage clair →
+            </h2>
+            <p className="mt-1.5 text-sm leading-6 text-muted">
+              Comprendre Governor sans bagage technique, puis suivre les{" "}
+              <span className="text-foreground">Guides</span> pas à pas. Aucun jargon requis.
+            </p>
           </Link>
           <Link
-            href="/docs/governor-15-minutes"
-            className="glass inline-flex items-center rounded-full px-5 py-2.5 text-sm font-medium text-foreground transition-colors hover:bg-white/[0.07]"
+            href="/docs/architecture"
+            className="glass group rounded-2xl p-5 transition-colors hover:bg-white/[0.06]"
           >
-            Governor en 15 minutes
+            <p className="font-mono text-[0.7rem] uppercase tracking-[0.18em] text-violet/80">
+              Profil technique · approfondissement
+            </p>
+            <h2 className="mt-2 text-base font-semibold text-foreground">
+              Architecture, contrats & internes →
+            </h2>
+            <p className="mt-1.5 text-sm leading-6 text-muted">
+              Couches canoniques, machine à états, portes, preuve — le modèle complet pour
+              construire dessus.
+            </p>
           </Link>
         </div>
       </header>
