@@ -9,6 +9,149 @@ export type Release = {
 
 export const RELEASES: Release[] = [
   {
+    version: "1.61.0",
+    date: "2026-06-11",
+    title: "Programme H — rollup de flotte",
+    tag: "Programme H",
+    highlights: [
+      "H central agrège les ledgers de toute la flotte, sans pont manuel",
+      "Scorecards honnêtes sur l'union — mesurées, jamais fabriquées",
+    ],
+    accent: "cyan",
+  },
+  {
+    version: "1.60.0",
+    date: "2026-06-11",
+    title: "Programme H — boucle d'apprentissage fermée",
+    tag: "Programme H",
+    highlights: [
+      "governor-loop auto-enregistre les outcomes par rôle dans le ledger",
+      "Chaque mission gouvernée nourrit H par défaut",
+    ],
+    accent: "cyan",
+  },
+  {
+    version: "1.59.0",
+    date: "2026-06-10",
+    title: "CLI d'observabilité workforce",
+    tag: "Programme H",
+    highlights: [
+      "Scorecards par rôle + recommandation + score d'équipe depuis le ledger",
+      "insufficient_data montré clairement, zéro score fabriqué",
+    ],
+    accent: "violet",
+  },
+  {
+    version: "1.57.0",
+    date: "2026-06-10",
+    title: "Mission Pack augmenté par recherche (H-5)",
+    tag: "Programme H",
+    highlights: [
+      "Standards réels (OWASP, NIST, RFC, WCAG) tracés à une source officielle",
+      "Dégradation hors-ligne propre, jamais de référence fabriquée",
+    ],
+    accent: "blue",
+  },
+  {
+    version: "1.55.0",
+    date: "2026-06-10",
+    title: "Team builder gagné du ledger (H-3)",
+    tag: "Programme H",
+    highlights: [
+      "Équipe composée + recommandation d'agent honnête, gagnées des outcomes",
+      "Jamais de note sur 100 inventée",
+    ],
+    accent: "cyan",
+  },
+  {
+    version: "1.53.0",
+    date: "2026-06-10",
+    title: "AI Workforce & Project Excellence (H-1)",
+    tag: "Programme H",
+    highlights: [
+      "Carte rôle → capacité : fondation de la workforce gouvernée",
+      "Réutilisation-first des moteurs existants",
+    ],
+    accent: "violet",
+  },
+  {
+    version: "1.52.0",
+    date: "2026-06-10",
+    title: "Mission Composer",
+    tag: "Composition",
+    highlights: [
+      "Couche mince orchestrant les moteurs existants en une mission",
+      "Scoring d'agent honnête (insufficient_data sans historique)",
+    ],
+    accent: "blue",
+  },
+  {
+    version: "1.49.0",
+    date: "2026-06-10",
+    title: "Confiance 10/10 — capstone",
+    tag: "Confiance",
+    highlights: [
+      "Trust-scorecard calculé : attestation, mutation testing, ratchets",
+      "Ledger de capacités zéro-confiance-silencieuse",
+    ],
+    accent: "cyan",
+  },
+  {
+    version: "1.46.0",
+    date: "2026-06-10",
+    title: "Attestation de merge signée",
+    tag: "Confiance",
+    highlights: [
+      "Un merge n'est autorisé que sur preuve signée et vérifiable",
+      "Refus si manquante, périmée, non-verte ou falsifiée",
+    ],
+    accent: "violet",
+  },
+  {
+    version: "1.36.0",
+    date: "2026-06-08",
+    title: "Governor-as-MCP + intelligence de flotte",
+    tag: "Flotte",
+    highlights: [
+      "Governor exposé comme serveur MCP à tout client",
+      "Score de santé de flotte, régressions, leçons propagées",
+    ],
+    accent: "blue",
+  },
+  {
+    version: "1.33.0",
+    date: "2026-06-08",
+    title: "Calibration mesurée",
+    tag: "Calibration",
+    highlights: [
+      "Prédictions vs issues enregistrées, score de calibration calculé",
+      "La gouvernance s'auto-mesure, sans complaisance",
+    ],
+    accent: "cyan",
+  },
+  {
+    version: "1.30.0",
+    date: "2026-06-06",
+    title: "Invariant d'auto-activation",
+    tag: "Capacités",
+    highlights: [
+      "Chaque capacité s'auto-déclenche par besoin (table data-driven)",
+      "Imposé fail-closed",
+    ],
+    accent: "violet",
+  },
+  {
+    version: "1.29.0",
+    date: "2026-06-06",
+    title: "Piliers stratégiques",
+    tag: "Gouvernance",
+    highlights: [
+      "Boucle de gouvernance fermée (décision / preuve / méta) + couche intelligence",
+      "Moteurs natifs stdlib, sans dépendance externe",
+    ],
+    accent: "blue",
+  },
+  {
     version: "1.16.0",
     date: "2026-06-05",
     title: "Niveau de gouvernance → cadran de strictesse",
