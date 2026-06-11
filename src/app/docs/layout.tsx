@@ -12,7 +12,19 @@ export default function DocsLayout({ children }: { children: React.ReactNode }) 
             <DocsSidebar />
           </div>
         </aside>
-        <div className="min-w-0 flex-1">{children}</div>
+        <div className="min-w-0 flex-1">
+          {/* Navigation docs sur mobile/tablette (l'aside est masquée < lg). */}
+          <details className="glass mb-8 rounded-2xl lg:hidden">
+            <summary className="flex cursor-pointer list-none items-center justify-between px-4 py-3 text-sm font-medium text-foreground">
+              <span>Sommaire de la documentation</span>
+              <span className="text-muted">▾</span>
+            </summary>
+            <div className="border-t border-border px-2 pb-3 pt-2">
+              <DocsSidebar />
+            </div>
+          </details>
+          {children}
+        </div>
       </div>
       <SiteFooter />
     </>
