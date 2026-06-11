@@ -9,38 +9,10 @@ import { CtaBand } from "../components/home/cta-band";
 import { Reveal } from "../components/site/reveal";
 import { CAPABILITY_COUNT, CAPABILITY_GROUPS } from "../lib/capabilities";
 
-const FEATURES = [
-  {
-    title: "Reprise exacte",
-    desc: "Journal de continuité crash-safe : reprends exactement où ça s'est arrêté, même après des jours.",
-    accent: "cyan",
-  },
-  {
-    title: "Attestation cryptographique",
-    desc: "Chaîne de hachage signée du fil de livraison — vérifiable hors-ligne, infalsifiable.",
-    accent: "violet",
-  },
-  {
-    title: "Gouvernance prédictive",
-    desc: "Le risque d'une tranche est prédit avant exécution et calibre profil, revue et strictesse.",
-    accent: "blue",
-  },
-  {
-    title: "Allégeance imposée",
-    desc: "L'exécuteur agit toujours sous Governor — contrat, gate hôte, vérification, attestation.",
-    accent: "cyan",
-  },
-  {
-    title: "Strictesse ciblée",
-    desc: "Zone rouge hard-enforced : rien de catastrophique ne passe, sans étouffer le travail propre.",
-    accent: "violet",
-  },
-  {
-    title: "Mode économe",
-    desc: "Le minimum de crédits par défaut, escalade uniquement sur échec de gate. Qualité garantie.",
-    accent: "blue",
-  },
-];
+// Une capacité phare par famille, tirée de la SOURCE DE VÉRITÉ (lib/capabilities)
+// -> cartes navigables vers le détail. Connecte /capabilities (plus orpheline)
+// et garantit que l'accueil reflète les vraies capacités, jamais périmées.
+const FEATURED = CAPABILITY_GROUPS.map((g) => g.items[0]).filter(Boolean).slice(0, 6);
 
 const ACCENT: Record<string, string> = {
   cyan: "before:bg-cyan",
@@ -76,14 +48,18 @@ export default function Home() {
           </Reveal>
 
           <div className="mt-12 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-            {FEATURES.map((f, i) => (
-              <Reveal key={f.title} delay={(i % 3) * 0.06}>
-                <div
-                  className={`glass group relative h-full overflow-hidden rounded-2xl p-6 transition-colors hover:bg-white/[0.06] before:absolute before:left-0 before:top-0 before:h-full before:w-px ${ACCENT[f.accent]} before:opacity-60`}
+            {FEATURED.map((cap, i) => (
+              <Reveal key={cap.id} delay={(i % 3) * 0.06}>
+                <Link
+                  href={`/capabilities/${cap.id}`}
+                  className={`glass group relative flex h-full flex-col overflow-hidden rounded-2xl p-6 transition-colors hover:bg-white/[0.06] before:absolute before:left-0 before:top-0 before:h-full before:w-px ${ACCENT[cap.accent]} before:opacity-60`}
                 >
-                  <h3 className="text-base font-semibold text-foreground">{f.title}</h3>
-                  <p className="mt-2.5 text-sm leading-6 text-muted">{f.desc}</p>
-                </div>
+                  <h3 className="text-base font-semibold text-foreground">{cap.title}</h3>
+                  <p className="mt-2.5 text-sm leading-6 text-muted">{cap.tagline}</p>
+                  <span className="mt-3 inline-block text-xs text-cyan/80 opacity-0 transition-opacity group-hover:opacity-100">
+                    Découvrir →
+                  </span>
+                </Link>
               </Reveal>
             ))}
           </div>
